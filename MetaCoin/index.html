@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>front-end</title>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+     
+  </head>
+  <body>
+  <button class = "btnImage">Одна кнопка</button>
+
+
+
+
+  <script type="text/javascript">
+
+  const ethEnabled = async function() {
+    if (window.ethereum != null) {
+      window.web3 = new Web3(window.ethereum);
+      try {
+        // Request account access if needed
+        await window.ethereum.enable();
+        // Acccounts now exposed
+      } catch (error) {
+        // User denied account access...
+      }
+    }
+  }
+
+  // Start function
+  const start = async function() {
+    await ethEnabled();
+  }
+
+  start();
+
+
+  </script>
+  <!--script src="./index.js"></script>-->
+  </body>
+</html>
